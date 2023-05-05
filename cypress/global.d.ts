@@ -100,5 +100,15 @@ declare namespace Cypress {
      * Create Transaction via bypassing UI and using XState createTransactionService
      */
     createTransaction(payload): Chainable<any>;
+
+    /**
+     * Log in via UI
+     */
+    loginUI(username: string, password: string, status: number): Chainable<any>;
+
+    /**
+     * Log in via API
+     */
+    loginAPI(username: string, password: string, status: number): Chainable<any>
   }
 }

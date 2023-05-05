@@ -16,6 +16,8 @@
     ],
     "isolatedModules": false,
     "allowJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   }
 }
