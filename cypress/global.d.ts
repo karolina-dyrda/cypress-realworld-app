@@ -110,5 +110,10 @@ declare namespace Cypress {
      * Log in via API
      */
     loginAPI(username: string, password: string, status: number): Chainable<any>
+
+       /**
+     * Log out via UI
+     */
+       logoutUI(): Chainable<any>;
   }
 }
