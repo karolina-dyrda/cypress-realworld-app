@@ -4,6 +4,9 @@ import * as statusCodes from './../../fixtures/statusCodes.json';
 import * as accountData from '../../fixtures/accountData.json';
 
 describe("User adds a bank account", () => {
+    beforeEach(() => {
+        cy.task("db:seed")
+    })
     it("Happy path", () => {
         cy.loginUI(authN.username, authN.password, statusCodes.OK)
         BankAccounts
