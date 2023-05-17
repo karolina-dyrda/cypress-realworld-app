@@ -3,12 +3,13 @@ import * as authN from './../../fixtures/authN.json';
 import * as statusCodes from './../../fixtures/statusCodes.json';
 import * as accountData from '../../fixtures/accountData.json';
 
-describe("User adds a bank account", () => {
+describe("User manages their bank accounts", () => {
     beforeEach(() => {
         cy.task("db:seed")
-    })
-    it("Happy path", () => {
         cy.loginUI(authN.username, authN.password, statusCodes.OK)
+    })
+
+    it("Add bank account", () => {
         BankAccounts
             .openList()
             .openNewForm()
@@ -18,5 +19,11 @@ describe("User adds a bank account", () => {
                 accountData.accountNr)
             .submitForm()
         BankAccounts.elements.bankAccountListItem().last().contains(accountData.bankName)
+    })
+
+    it("Delete bank account", () => {
+        BankAccounts
+            .openList()
+            .deleteFirstItem()
     })
 })

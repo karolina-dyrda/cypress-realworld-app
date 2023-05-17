@@ -50,6 +50,21 @@ class BankAccounts {
         this.addData(bankName, routingNr, accountNr)
         this.submitForm()
     }
+
+    deleteFirstItem() {
+        cy.intercept('POST', Cypress.env('api'), (req) => {
+            graphQL.setAlias(req, 'DeleteBankAccount')
+            graphQL.setAlias(req, 'ListBankAccount')
+          })
+        this.elements.bankAccountListItem().first()
+        .then(firstItem => {
+            cy.wrap(firstItem).find('[data-test="bankaccount-delete"]').click()
+            cy.wait('@DeleteBankAccount')
+            cy.wait('@ListBankAccount')
+            cy.wrap(firstItem).find('[data-test="bankaccount-delete"]').should('not.exist')
+            cy.wrap(firstItem).contains('Deleted')
+        })
+    }
 }
 
 export default BankAccounts = new BankAccounts()
