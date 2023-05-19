@@ -2,7 +2,6 @@ import * as graphQL from "../utils/graphQL-utils"
 
 class BankAccounts {
     elements = {
-        sideNavPageBankAccount: () => cy.get('[data-test="sidenav-bankaccounts"]'),
         createBtn: () => cy.get('[data-test="bankaccount-new"]'),
         deleteBtn: () => cy.get('[data-test="bankaccount-delete"]'),
         bankAccountList: () => cy.get('[data-test="bankaccount-list"]'),
@@ -14,7 +13,7 @@ class BankAccounts {
     }
 
     openList() {
-        this.elements.sideNavPageBankAccount().click()
+        cy.sideNavi("bankaccounts")
         cy.url().should('include', '/bankaccounts')
         return this
     }

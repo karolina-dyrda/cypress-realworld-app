@@ -49,3 +49,12 @@
 //     return data;
 //   });
 // });
+
+Cypress.Commands.add(('sideNavi'), (node: 
+    'home' | 
+    'user-settings' |
+    'bankaccounts' |
+    'notifications' |
+    'signout') => {
+    cy.get(`[data-test="sidenav-${node}"]`).click()
+})
