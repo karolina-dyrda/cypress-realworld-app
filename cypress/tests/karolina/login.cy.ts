@@ -1,7 +1,7 @@
 import * as authN from './../../fixtures/authN.json'
 import * as statusCodes from './../../fixtures/statusCodes.json'
 
-describe('UI Authentication', () => {
+describe('Authentication via user interface', () => {
     it('Log in with correct credentials', () => {
         cy.loginUI(authN.username, authN.password, statusCodes.OK)
     })

@@ -3,7 +3,7 @@ import * as authN from './../../fixtures/authN.json';
 import * as statusCodes from './../../fixtures/statusCodes.json';
 import * as accountData from '../../fixtures/accountData.json';
 
-describe("User manages their bank accounts", () => {
+describe("Manage user's bank accounts", () => {
     beforeEach(() => {
         cy.task("db:seed")
         cy.loginUI(authN.username, authN.password, statusCodes.OK)
@@ -14,16 +14,17 @@ describe("User manages their bank accounts", () => {
             .openList()
             .openNewForm()
             .addData(
-                accountData.bankName, 
-                accountData.routingNr, 
-                accountData.accountNr)
+                accountData.account.bankName, 
+                accountData.account.routingNr, 
+                accountData.account.accountNr)
             .submitForm()
-        BankAccounts.elements.bankAccountListItem().last().contains(accountData.bankName)
+        BankAccounts.elements.bankAccountListItem().last().contains(accountData.account.bankName)
     })
 
-    it("Delete bank account", () => {
+    it.only("Delete bank account", () => {
         BankAccounts
             .openList()
             .deleteFirstItem()
+        cy.task("db:seed")
     })
 })
