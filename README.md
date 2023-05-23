@@ -1,3 +1,11 @@
+# Intro
+Hi, it's Karolina! 👋 I've forked this project to implement a set of automated tests using Cypress framework. Configuration of this app has been slightly adjusted to cover my needs during training. Most of my input you can find here:
+- test cases cypress/tests/karolina
+- page objects cypress/pageObjects
+- fixtures cypress/fixtures
+
+# From app authors
+
 <p align="center">
   <img alt="Cypress Real World App Logo" src="./src/svgs/rwa-logo.svg" />
 </p>
