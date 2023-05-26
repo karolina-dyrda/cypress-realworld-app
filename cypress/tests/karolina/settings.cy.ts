@@ -5,9 +5,17 @@ import { settings } from '../../pageObjects/Settings'
 
 describe("Update user's personal data", () => {
 
-    beforeEach(() => {
+    before(() => {
         cy.task("db:seed")
         cy.loginUI(authN.username, authN.password, statusCodes.OK)
+    })
+
+    beforeEach(() => {
+        Cypress.Cookies.preserveOnce('connect.sid')
+    })
+
+    after(() => {
+        cy.task("db:seed")
     })
 
     it("Change first name and last name", () => {

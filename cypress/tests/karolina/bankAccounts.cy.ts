@@ -6,6 +6,11 @@ import * as accountData from '../../fixtures/accountData.json';
 describe("Manage user's bank accounts", () => {
     beforeEach(() => {
         cy.task("db:seed")
+        Cypress.Cookies.preserveOnce('connect.sid')
+        
+    })
+
+    before(() => {
         cy.loginUI(authN.username, authN.password, statusCodes.OK)
     })
 
@@ -33,7 +38,7 @@ describe("Manage user's bank accounts", () => {
     })
 })
 
-describe.only("Check validation messages", () => {
+describe("Check validation messages", () => {
 
     before(() => {
         cy.task("db:seed")
