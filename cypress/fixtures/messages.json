@@ -1,0 +1,15 @@
+{
+        "bankName": {
+            "empty": "Enter a bank name",
+            "minlength": "Must contain at least 5 characters"
+    },
+        "routingNumber": {
+            "empty": "Enter a valid bank routing number",
+            "range": "Must contain a valid routing number"
+        },
+        "accountNumber": {
+            "empty": "Enter a valid bank account number",
+            "minlength": "Must contain at least 9 digits",
+            "maxlength": "Must contain no more than 12 digits"
+        }
+}

@@ -7,8 +7,28 @@
     },
     "account": {
         "bankName": "National Bank",
-        "routingNr": 937482018,
-        "accountNr": 111211112
+        "routingNumber": "937482018",
+        "accountNumber": "111211112"
 
-    }
+    },
+    "inputValidation": 
+        {"empty": {
+            "bankName": "i{backspace}",
+            "routingNumber": "i{backspace}", 
+            "accountNumber": "i{backspace}"
+        },
+        "incorrect": [
+                {
+                    "bankName": "e", 
+                    "routingNumber": "12345678", 
+                    "accountNumber": "123456789"
+                },
+                {
+                    "bankName": "Exmp", 
+                    "routingNumber": "1234567890", 
+                    "accountNumber": "123456789012"
+                }
+
+        ]}
+    
 }
