@@ -14,10 +14,6 @@ describe("Update user's personal data", () => {
         Cypress.Cookies.preserveOnce('connect.sid')
     })
 
-    after(() => {
-        cy.task("db:seed")
-    })
-
     it("Change first name and last name", () => {
         settings.updateData( { 
             "firstName": accountData.user.firstName,

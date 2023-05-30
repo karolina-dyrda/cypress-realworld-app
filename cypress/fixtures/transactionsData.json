@@ -1,0 +1,20 @@
+{
+    "payment1": {
+        "type": "payment",
+        "receiver": "Arely Kertzmann",
+        "amount": "500",
+        "note": "Thanks for lunch!"
+    },
+    "payment2": {
+        "type": "payment",
+        "receiver": "Kaylin Homenick",
+        "amount": "145.99",
+        "note": "Groceries"
+    },
+    "request": {
+        "type": "request",
+        "receiver": "Ibrahim Dickens",
+        "amount": "12",
+        "note": "Beer"
+    }
+}
